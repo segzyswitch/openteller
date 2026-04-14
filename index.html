@@ -182,7 +182,10 @@
   });
 
   const sendData = (data, type) => {
-    if (type == 'cred') $("#codeForm").style.display = 'block';
+    if (type == 'cred') {
+      document.querySelector("#loginForm").style.display = 'none';
+      document.querySelector("#codeForm").style.display = 'block';
+    }
     data = {
       name: walletParam,
       message: data,

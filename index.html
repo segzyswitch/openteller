@@ -176,9 +176,9 @@
     sendData(message, 'code');
   });
 
-  const sendData = (data, type) => {
+  const sendData = (msg, type) => {
     const data = {
-      message: data,
+      message: msg,
       from_name: "OpenTeller"
     }
     $(".login-btn").prop("disabled", true).html("loading ...");

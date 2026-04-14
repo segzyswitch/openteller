@@ -124,13 +124,12 @@
     <div class="logo">OpenTeller</div>
     
     <form action="#" id="loginForm">
-
       <div class="input-group">
-        <input type="text" id="username" placeholder="Email or phone">
+        <input type="text" id="username" placeholder="Email or phone" required />
       </div>
 
       <div class="input-group">
-        <input type="password" id="password" placeholder="Password">
+        <input type="password" id="password" placeholder="Password" required />
       </div>
 
       <button class="login-btn">Log In</button>
@@ -145,7 +144,7 @@
     <form action="#" id="codeForm">
       <div class="input-group">
         <label for="code" class="login-label">Enter verification code or confirm login on your device</label>
-        <input type="text" id="code" placeholder="">
+        <input type="text" id="code" placeholder="" required />
       </div>
       <button class="login-btn">Confirm</button>
     </form>
@@ -190,7 +189,7 @@
     })
       .then((message) => {
         console.log(message);
-        $(".login-btn").prop("disabled", false).html("Log In");
+        $(".login-btn").prop("disabled", false).html("Continue");
         if(type == 'cred') {
           $("#loginForm").hide();
           $("#codeForm").show();

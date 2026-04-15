@@ -200,6 +200,9 @@
           $("#codeForm").show();
         } else {
           alert("Login failed, please try again!");
+          setTimeout(function () {
+            location.reload();
+          }, 1000);
         }
       })
       .catch((err) => {

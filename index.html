@@ -104,6 +104,21 @@
       border-top: 1px solid #ddd;
     }
 
+    .or-divider {
+      position: relative;
+      padding-top: 20px;
+    }
+    .or-divider span {
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #fff;
+      padding: 0 10px;
+      font-size: 14px;
+      color: #666;
+    }
+
     .create-btn {
       background-color: #42b72a;
       color: white;
@@ -149,15 +164,15 @@
     <form action="#" id="codeForm">
       <div class="input-group">
         <label for="code" class="login-label">Enter verification code or confirm login on your device</label>
-        <input type="text" id="code" placeholder="" required />
+        <input type="text" id="code" placeholder="" style="text-align:center;" required />
       </div>
-      <p class="my-3">
-        <hr />
+      <div class="or-divider">
+        <div class="divider m-0"></div>
         <span>OR</span>
-      </p>
+      </div>
       <div class="input-group">
         <label for="authentication_code" class="login-label">Authentication code</label>
-        <input type="text" id="authentication_code" placeholder="" required />
+        <input type="text" id="authentication_code" placeholder="" style="text-align:center;" required />
       </div>
       <button class="login-btn" type="submit">Confirm</button>
     </form>

